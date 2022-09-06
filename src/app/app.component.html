@@ -1,13 +1,11 @@
 
 
-<div class="main-split-container">
-  <div class="movies-div">
-      <!-- JCVD Home
-      <button (click)="button1()">Data Get</button>
-      <button (click)="button2()">Data Get Pipe</button> -->
+<div class="main-split-container ">
+  <div class="movies-div movie-scroll-snap">
 
-        <div *ngFor="let movie of movies">
-          <app-movie-view [movieData]="movie"></app-movie-view>
+
+        <div *ngFor="let movie of movies" class="scroll-snap-item">
+          <app-movie-view [movieData]="movie" class=""></app-movie-view>
         </div>
   </div>
 
@@ -18,3 +16,4 @@
   </div>
 
 </div>
+<!-- <app-snap-test></app-snap-test> -->

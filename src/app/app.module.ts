@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieViewComponent } from './movie-view/movie-view.component';
 import { GlobeViewComponent } from './globe-view/globe-view.component';
+import { SnapTestComponent } from './snap-test/snap-test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieViewComponent,
-    GlobeViewComponent
+    GlobeViewComponent,
+    SnapTestComponent
   ],
   imports: [
     BrowserModule,

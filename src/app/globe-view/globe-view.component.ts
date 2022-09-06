@@ -207,10 +207,11 @@ export class GlobeViewComponent implements OnInit, AfterViewInit {
         void main() {
           float intensity = pow(0.6 - dot(vertexNormal, vec3(0, 0, 1.0)),2.0);
 
-          gl_FragColor = vec4(0.3, 0.6, 1.0, 1.0) * intensity;
+          gl_FragColor = vec4(1.3, 0.6, 1.0, 1.0) * intensity;
         }
     `
-
+    // float intensity = pow(0.6 - dot(vertexNormal, vec3(-1, -1, -1.0)),-2.0);
+    // gl_FragColor = vec4(0.3, 0.6, 1.0, 1.0) * intensity;
     @ViewChild('canvas')
     private canvasRef: ElementRef;
 
@@ -256,7 +257,7 @@ export class GlobeViewComponent implements OnInit, AfterViewInit {
       fragmentShader: this.earthFragmentShader,
       uniforms: {
         globeTexture: {
-          value: new THREE.TextureLoader().load('../../assets/textures/earthgitCrop.png')
+          value: new THREE.TextureLoader().load('../../assets/textures/earth2kFilter.png')
         }
     }}))
     // Earth Atmosphere
@@ -330,12 +331,13 @@ export class GlobeViewComponent implements OnInit, AfterViewInit {
     private createScene(): void {
       //* Scene
       this.scene = new THREE.Scene();
+      // this.scene.background = new THREE.Color(0x000000)
       this.scene.background = new THREE.Color(0x000000)
       // this.scene.add(this.cube);
       this.scene.add(this.earthGeometry)
       this.scene.add(this.earthAtmosGeometry);
       this.earthAtmosGeometry.scale.set(1.1, 1.1, 1.1)
-      this.scene.add(this.stars)
+      // this.scene.add(this.stars)
 
       //*Camera
       let aspectRatio = this.getAspectRatio();
